@@ -42,10 +42,10 @@ The project follows a three-tier architecture:
 ---
 
 ## 🗂️ Project Structure
-frontend/ - User interfaces and dashboards
-backend/ - PHP backend logic and APIs
-assets/ - CSS, JavaScript, images
-database/ - MySQL schema (.sql file)
+- frontend/ - User interfaces and dashboards
+- backend/ - PHP backend logic and APIs
+- assets/ - CSS, JavaScript, images
+- database/ - MySQL schema (.sql file)
 
 ---
 
