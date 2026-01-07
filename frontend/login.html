@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Login - Smart Maintenance</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html"><img id="site-logo" src="../assets/images/logo.svg" alt="Smart Maintenance logo"></a>
+      </div>
+      <nav class="nav">
+        <a href="index.html">🏠 Home</a>
+        <a href="student.php">👩‍🎓 Student</a>
+        <a href="admin.php">🧑‍💼 Admin</a>
+        <a href="technician.php">🛠️ Technician</a>
+        
+        
+        
+      </nav>
+    </div>
+  </header>
+
+  <main class="container hero-card">
+    <h2>Login</h2>
+    <form id="loginForm" class="form">
+      <label>Email<input name="email" type="email" required></label>
+      <label>Password<input name="password" type="password" required></label>
+      <div class="form-row">
+        <button class="btn primary" type="submit">Login</button>
+        <a class="btn ghost" href="signup.html">Sign up</a>
+      </div>
+    </form>
+    <p id="msg" style="color:red"></p>
+  </main>
+
+  <script src="../assets/js/app.js"></script>
+  <script>
+    // Use the helper postForm in app.js
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = new FormData(e.target);
+      try {
+        const j = await postForm('../backend/login.php', form);
+        if (j && j.success) {
+          // redirect based on role; tolerate missing role
+          if (j.role === 'admin') window.location.href = 'admin.php';
+          else if (j.role === 'technician') window.location.href = 'technician.php';
+          else window.location.href = 'student.php';
+        } else {
+          document.getElementById('msg').textContent = 'Login failed: ' + (j && j.error ? j.error : 'unknown error');
+        }
+      } catch (err) {
+        document.getElementById('msg').textContent = 'Network error: ' + err.message;
+      }
+    });
+  </script>
+</body>
+</html>
