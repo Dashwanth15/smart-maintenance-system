@@ -77,5 +77,23 @@ GitHub Pages supports only static content (HTML, CSS, JavaScript). Since this pr
 Computer Science Engineering Student  
 
 
-## 🗂️ Project Structure
+---
+
+## 📸 Project Screenshots
+
+### 🏠 Home Page
+![Home Page](screenshots/home_page.png)
+
+### 🔐 Login & Signup Page
+![Login & Signup](screenshots/login_and_signup_page.png)
+
+### 👨‍🎓 Student Interface
+![Student Interface](screenshots/student_interface.png)
+
+### 🛠️ Admin Interface
+![Admin Interface](screenshots/admin_interface.png)
+
+### 🧑‍🔧 Technician Interface
+![Technician Interface](screenshots/technician_interface.png)
+
 
