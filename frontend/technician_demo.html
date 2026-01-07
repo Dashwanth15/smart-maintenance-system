@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Technician - Smart Maintenance</title>
+
+  <!-- SAME CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- INLINE STYLES: PRESERVED 1:1 -->
+  <style>
+    body {
+      background: #fafaff;
+    }
+
+    .dashboard-header {
+      background: linear-gradient(135deg, #6c63ff, #9c6bff);
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .request-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      padding: 18px 22px;
+      margin-bottom: 18px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .request-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    }
+
+    .request-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .request-header h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .status.Pending { background-color: #ffb84d; }
+    .status.InProgress { background-color: #6c63ff; }
+    .status.Completed { background-color: #4caf50; }
+
+    .request-body p {
+      margin: 6px 0;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .action-btn {
+      margin-top: 10px;
+      background-color: #6c63ff;
+      border: none;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+
+    .action-btn:hover {
+      background-color: #5848e8;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <a href="../index.html">
+        <img id="site-logo" src="../assets/images/logo.svg" alt="Smart Maintenance logo">
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="../index.html">🏠 Home</a>
+      <a href="student_demo.html">👩‍🎓 Student</a>
+      <a href="admin_demo.html">🧑‍💼 Admin</a>
+      <a href="technician_demo.html">🛠️ Technician</a>
+      <span title="Backend only">🔒 Logout</span>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- PHP: <?= $name ?> -->
+  <div class="dashboard-header">
+    <h2>Welcome, Technician (Demo) 🛠️</h2>
+    <p>Here are your assigned maintenance requests</p>
+  </div>
+
+  <!-- REQUEST 1 -->
+  <div class="request-card">
+    <div class="request-header">
+      <h3>🔧 #301 — Fan not working</h3>
+      <span class="status Pending">Pending</span>
+    </div>
+
+    <div class="request-body">
+      <p>Ceiling fan not rotating properly.</p>
+      <p><strong>Type:</strong> Electrical |
+         <strong>Location:</strong> Room 203</p>
+      <p><strong>Student:</strong> Student A</p>
+      <p><strong>Created:</strong> 2025-01-04</p>
+
+      <button class="action-btn" disabled>
+        Start Work (Demo)
+      </button>
+    </div>
+  </div>
+
+  <!-- REQUEST 2 -->
+  <div class="request-card">
+    <div class="request-header">
+      <h3>🔧 #302 — Water leakage</h3>
+      <span class="status Completed">Completed</span>
+    </div>
+
+    <div class="request-body">
+      <p>Leakage below sink.</p>
+      <p><strong>Type:</strong> Plumbing |
+         <strong>Location:</strong> Bathroom</p>
+      <p><strong>Student:</strong> Student B</p>
+      <p><strong>Created:</strong> 2024-12-30</p>
+
+      <p><strong>✅ Started:</strong> 2024-12-30 10:15</p>
+      <p><strong>✅ Completed:</strong> 2024-12-30 11:05</p>
+      <p><strong>🕒 Time Taken:</strong> 50 minutes</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>Smart Maintenance System © 2025 | Demo UI</p>
+</footer>
+
+<!--
+ Backend logic removed for GitHub Pages demo:
+ - start_work.php
+ - mark_completed.php
+ - update_status.php
+-->
+</body>
+</html>

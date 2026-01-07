@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin - Smart Maintenance</title>
+
+<!-- SAME CSS -->
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<!-- INLINE STYLES: PRESERVED 1:1 -->
+<style>
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f4f6fb;
+  margin: 0;
+  color: #333;
+}
+
+header.site-header {
+  background: linear-gradient(90deg, #5a5bf3, #8f94fb);
+  color: #fff;
+  padding: 12px 0;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.header-inner {
+  width: 92%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand img { height: 45px; }
+
+.nav a {
+  color: #fff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: opacity .2s;
+}
+.nav a:hover { opacity: 0.85; }
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.dashboard-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.dashboard-buttons a {
+  background: #6c63ff;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+.dashboard-buttons a:hover {
+  background: #5650e5;
+  transform: translateY(-2px);
+}
+
+#requestsSection {
+  background: #fff;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.request-card {
+  background: #fafafa;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  padding: 15px 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.04);
+  transition: 0.2s;
+}
+.request-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.request-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.request-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.request-row span {
+  flex: 1;
+  min-width: 180px;
+}
+
+.request-row strong { color: #333; }
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-top: 6px;
+  border-top: 1px dashed #ddd;
+  margin-top: 8px;
+}
+
+select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+
+button.btn-assign {
+  background: #5a5bf3;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button.btn-assign:hover { background: #4446d2; }
+
+button.btn-assign.gray { background: #888; }
+button.btn-assign.green { background: #28a745; }
+button.btn-assign.orange { background: #ff8800; }
+button.btn-assign.blue { background: #007bff; }
+
+button.btn-assign.green:hover { background: #218838; }
+button.btn-assign.orange:hover { background: #e67600; }
+button.btn-assign.blue:hover { background: #0069d9; }
+
+.time-info {
+  font-size: 13px;
+  color: #666;
+  padding-top: 4px;
+  margin-top: 4px;
+  border-top: 1px dashed #ddd;
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <a href="../index.html">
+        <img src="../assets/images/logo.svg" alt="Smart Maintenance Logo">
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="../index.html">🏠 Home</a>
+      <a href="student_demo.html">👩‍🎓 Student</a>
+      <a href="technician_demo.html">🛠️ Technician</a>
+      <span title="Backend only">🔒 Logout</span>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <!-- PHP: <?= $name ?> -->
+  <h2>👨‍💼 Welcome, Admin (Demo)</h2>
+
+  <div class="dashboard-buttons">
+    <a href="#" onclick="showRequests()">📋 Manage Requests</a>
+    <a href="#">⭐ View Reports</a>
+  </div>
+
+  <section id="requestsSection">
+    <h3>All Maintenance Requests</h3>
+
+    <!-- REQUEST CARD 1 -->
+    <div class="request-card">
+      <div class="request-title">#201 — Fan not working</div>
+
+      <div class="request-row">
+        <span><strong>Type:</strong> Electrical</span>
+        <span><strong>Location:</strong> Room 203</span>
+      </div>
+
+      <div class="request-row">
+        <span><strong>Student:</strong> Student A</span>
+      </div>
+
+      <div class="request-row controls-row" data-request-id="201">
+        <label>Technician Type:
+          <select disabled>
+            <option>Electrical</option>
+          </select>
+        </label>
+
+        <label>Technician:
+          <select disabled>
+            <option>Ramesh</option>
+          </select>
+        </label>
+
+        <button type="button" class="btn-assign green" disabled>
+          Assigned ✓
+        </button>
+      </div>
+    </div>
+
+    <!-- REQUEST CARD 2 -->
+    <div class="request-card">
+      <div class="request-title">#202 — Water leakage</div>
+
+      <div class="request-row">
+        <span><strong>Type:</strong> Plumbing</span>
+        <span><strong>Location:</strong> Bathroom</span>
+      </div>
+
+      <div class="request-row">
+        <span><strong>Student:</strong> Student B</span>
+      </div>
+
+      <div class="request-row controls-row" data-request-id="202">
+        <label>Technician Type:
+          <select disabled>
+            <option>Plumbing</option>
+          </select>
+        </label>
+
+        <label>Technician:
+          <select disabled>
+            <option>Suresh</option>
+          </select>
+        </label>
+
+        <button type="button" class="btn-assign blue" disabled>
+          Completed ✅
+        </button>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<script>
+function showRequests() {
+  document.getElementById('requestsSection')
+    .scrollIntoView({ behavior: 'smooth' });
+}
+
+/*
+ Backend actions removed for demo:
+ - fetch_technicians.php
+ - assign_technician.php
+ - fetch_requests.php
+ Polling disabled intentionally.
+*/
+</script>
+
+</body>
+</html>

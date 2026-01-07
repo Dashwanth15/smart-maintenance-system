@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Student - Smart Maintenance</title>
+
+  <!-- SAME CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- INLINE STYLES: PRESERVED 1:1 -->
+  <style>
+    body { background: #fafaff; }
+    .hero-card {
+      background: linear-gradient(135deg, #ffffff, #f7f6ff);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 20px 30px;
+      margin: 25px 0;
+    }
+    .hero-card h4 { color: #444; font-size: 1.3rem; margin-bottom: 10px; }
+    form.form label { display: block; margin-top: 12px; color: #555; }
+    form.form input, form.form select, form.form textarea {
+      width: 100%; padding: 8px 10px; margin-top: 4px; border-radius: 8px;
+      border: 1px solid #ccc; font-size: 0.95rem;
+    }
+    .btn.primary {
+      background-color: #6c63ff; border: none; color: white;
+      padding: 10px 18px; border-radius: 8px; font-weight: 600;
+      cursor: pointer; transition: 0.2s;
+    }
+    .btn.primary:hover { background-color: #5848e8; }
+    .request-card {
+      background: #fff; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      padding: 16px 20px; margin-bottom: 18px; transition: 0.2s ease;
+    }
+    .request-header {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;
+    }
+    .status { display: inline-block; padding: 4px 10px; border-radius: 8px;
+      font-size: 0.85rem; color: #fff; font-weight: 600;
+    }
+    .status.Pending { background-color: #ffb84d; }
+    .status.InProgress { background-color: #6c63ff; }
+    .status.Completed { background-color: #4caf50; }
+    .status.Rejected { background-color: #e74c3c; }
+    .review { margin-top: 12px; padding-top: 10px; border-top: 1px solid #eee; }
+    .star-rating { direction: rtl; display: inline-flex; }
+    .star-rating input { display: none; }
+    .star-rating label {
+      font-size: 22px; color: #ccc; cursor: pointer; transition: color 0.2s;
+    }
+    .star-rating input:checked ~ label,
+    .star-rating label:hover, .star-rating label:hover ~ label {
+      color: #f8b400;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER: SAME STRUCTURE -->
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <a href="../index.html">
+        <img id="site-logo" src="../assets/images/logo.svg" alt="Smart Maintenance logo">
+      </a>
+    </div>
+    <nav class="nav">
+      <a href="../index.html">🏠 Home</a>
+      <a href="student_demo.html">👩‍🎓 Student</a>
+      <a href="admin_demo.html">🧑‍💼 Admin</a>
+      <a href="technician_demo.html">🛠️ Technician</a>
+      <span title="Backend only">🔒 Logout</span>
+    </nav>
+  </div>
+</header>
+
+<header class="bar">
+  <!-- PHP: <?= $name ?> -->
+  <h3>Student Dashboard — Demo User</h3>
+</header>
+
+<main class="container">
+
+  <!-- SUBMIT REQUEST (UI ONLY) -->
+  <section class="hero-card">
+    <h4>Submit a new request</h4>
+
+    <!-- Backend disabled -->
+    <form class="form">
+      <label>Title<input placeholder="Fan not working" disabled></label>
+
+      <label>Technician Type
+        <select disabled>
+          <option>Electrical</option>
+          <option>Plumbing</option>
+          <option>Carpentry</option>
+          <option>Cleaning</option>
+        </select>
+      </label>
+
+      <label>Location<input placeholder="Building / Room" disabled></label>
+      <label>Contact<input placeholder="phone or email" disabled></label>
+      <label>Description<textarea disabled></textarea></label>
+
+      <div class="form-row">
+        <button class="btn primary" type="button" disabled>
+          Submit Request (Demo)
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <!-- REQUEST LIST -->
+  <section>
+    <h4>Your requests</h4>
+
+    <!-- REQUEST CARD 1 -->
+    <div class="request-card">
+      <div class="request-header">
+        <h3>🧾 #101 — Fan not working</h3>
+        <span class="status Pending">Pending</span>
+      </div>
+
+      <div class="request-body">
+        <p>Ceiling fan is not working properly.</p>
+        <p><strong>Type:</strong> Electrical |
+           <strong>Location:</strong> Room 203</p>
+        <p><strong>Technician:</strong> Not assigned</p>
+        <p><strong>Created:</strong> 2025-01-04</p>
+      </div>
+    </div>
+
+    <!-- REQUEST CARD 2 -->
+    <div class="request-card">
+      <div class="request-header">
+        <h3>🧾 #102 — Water leakage</h3>
+        <span class="status Completed">Completed</span>
+      </div>
+
+      <div class="request-body">
+        <p>Leakage under wash basin.</p>
+        <p><strong>Type:</strong> Plumbing |
+           <strong>Location:</strong> Bathroom</p>
+        <p><strong>Technician:</strong> Suresh</p>
+        <p><strong>Created:</strong> 2024-12-30</p>
+
+        <!-- REVIEW UI (STATIC) -->
+        <div class="review">
+          <h5>Already reviewed.</h5>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer style="text-align:center; margin:30px 0; color:#777;">
+  Demo version for GitHub Pages.<br>
+  Backend implemented using <strong>PHP & MySQL</strong> and runs locally on <strong>XAMPP</strong>.
+</footer>
+
+</body>
+</html>
