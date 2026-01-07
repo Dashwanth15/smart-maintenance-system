@@ -1,90 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Smart Maintenance Management System</title>
+  <meta charset="UTF-8">
+  <title>Smart Maintenance Management System</title>
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: #f4f6fb;
+      color: #333;
+    }
 
-        header {
-            background-color: #1f2933;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+    header {
+      background: linear-gradient(90deg, #5a5bf3, #8f94fb);
+      color: #fff;
+      padding: 18px 0;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
 
-        main {
-            padding: 40px;
-            text-align: center;
-        }
+    .header-inner {
+      width: 92%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .nav-links {
-            margin-top: 30px;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .nav-links a {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 20px;
-            text-decoration: none;
-            color: white;
-            background-color: #2563eb;
-            border-radius: 6px;
-            font-weight: bold;
-        }
+    .brand img {
+      height: 48px;
+    }
 
-        .nav-links a:hover {
-            background-color: #1d4ed8;
-        }
+    .brand h1 {
+      font-size: 20px;
+      margin: 0;
+      font-weight: 600;
+    }
 
-        footer {
-            margin-top: 60px;
-            padding: 15px;
-            background-color: #e5e7eb;
-            font-size: 14px;
-        }
-    </style>
+    main {
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
+    }
+
+    .intro {
+      background: #ffffff;
+      padding: 28px 32px;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 35px;
+    }
+
+    .intro h2 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .intro p {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .dashboards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 22px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 12px;
+      background: #6c63ff;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .card a:hover {
+      background: #5650e5;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #333;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <h1>Smart Maintenance Management System</h1>
-    <p>Automated Maintenance Request & Task Management Platform</p>
+  <div class="header-inner">
+    <div class="brand">
+      <img src="assets/images/logo.svg" alt="Smart Maintenance Logo">
+      <h1>Smart Maintenance System</h1>
+    </div>
+  </div>
 </header>
 
 <main>
-    <h2>Welcome</h2>
-    <p>
-        This system provides a centralized platform for users to raise maintenance
-        requests, technicians to manage assigned tasks, and administrators to
-        monitor and control maintenance operations efficiently.
-    </p>
 
-    <div class="nav-links">
-        <a href="frontend/login.html">Login / Signup</a>
-        <a href="frontend/student.html">Student Dashboard</a>
-        <a href="frontend/admin.html">Admin Dashboard</a>
-        <a href="frontend/technician.html">Technician Dashboard</a>
+  <section class="intro">
+    <h2>Project Overview</h2>
+    <p>
+      The <strong>Smart Maintenance Management System</strong> is a role-based
+      maintenance tracking platform designed to streamline the process of
+      raising, assigning, and resolving maintenance requests.
+    </p>
+    <p>
+      This live demo showcases the <strong>frontend UI</strong> hosted on
+      GitHub Pages. The complete backend functionality is implemented using
+      <strong>PHP and MySQL</strong> and runs locally via <strong>XAMPP</strong>.
+    </p>
+  </section>
+
+  <section class="dashboards">
+    <div class="card">
+      <h3>👩‍🎓 Student Dashboard</h3>
+      <p>
+        Allows students to raise maintenance requests, track request status,
+        and submit service reviews.
+      </p>
+      <a href="frontend/student_demo.html">Open Student Demo</a>
     </div>
+
+    <div class="card">
+      <h3>🧑‍💼 Admin Dashboard</h3>
+      <p>
+        Enables administrators to manage all maintenance requests, assign
+        technicians, and monitor system activity.
+      </p>
+      <a href="frontend/admin_demo.html">Open Admin Demo</a>
+    </div>
+
+    <div class="card">
+      <h3>🛠️ Technician Dashboard</h3>
+      <p>
+        Allows technicians to view assigned tasks, update work status, and
+        track completion timelines.
+      </p>
+      <a href="frontend/technician_demo.html">Open Technician Demo</a>
+    </div>
+  </section>
+
 </main>
 
 <footer>
-    <p>
-        Frontend Demo hosted on GitHub Pages.<br>
-        Backend implemented using <strong>PHP & MySQL</strong> and runs locally on
-        <strong>XAMPP</strong>.
-    </p>
-    <p>Developed by Dashwanth Madduri</p>
+  <p>
+    Frontend demo hosted on <strong>GitHub Pages</strong>.<br>
+    Backend implemented using <strong>PHP & MySQL</strong> and executed locally using <strong>XAMPP</strong>.
+  </p>
+  <p>
+    © 2025 Smart Maintenance System | Developed by <strong>Dashwanth</strong>
+  </p>
 </footer>
 
 </body>
