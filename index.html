@@ -1,20 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Smart Maintenance System</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <title>Smart Maintenance Management System</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1f2933;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .nav-links {
+            margin-top: 30px;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #2563eb;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            background-color: #1d4ed8;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 15px;
+            background-color: #e5e7eb;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
 
-  <h1 style="text-align:center;">Smart Maintenance System</h1>
-  <p style="text-align:center;">
-    This is the entry point of the Smart Maintenance Website.
-  </p>
+<header>
+    <h1>Smart Maintenance Management System</h1>
+    <p>Automated Maintenance Request & Task Management Platform</p>
+</header>
 
-  <div style="text-align:center; margin-top:20px;">
-    <a href="frontend/index.html">Open Application</a>
-  </div>
+<main>
+    <h2>Welcome</h2>
+    <p>
+        This system provides a centralized platform for users to raise maintenance
+        requests, technicians to manage assigned tasks, and administrators to
+        monitor and control maintenance operations efficiently.
+    </p>
+
+    <div class="nav-links">
+        <a href="frontend/login.html">Login / Signup</a>
+        <a href="frontend/student.html">Student Dashboard</a>
+        <a href="frontend/admin.html">Admin Dashboard</a>
+        <a href="frontend/technician.html">Technician Dashboard</a>
+    </div>
+</main>
+
+<footer>
+    <p>
+        Frontend Demo hosted on GitHub Pages.<br>
+        Backend implemented using <strong>PHP & MySQL</strong> and runs locally on
+        <strong>XAMPP</strong>.
+    </p>
+    <p>Developed by Dashwanth Madduri</p>
+</footer>
 
 </body>
 </html>
